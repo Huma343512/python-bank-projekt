@@ -43,3 +43,9 @@ CREATE TABLE fun_characters (
     slogan TEXT NOT NULL,
     sillyness INTEGER CHECK (sillyness >= 0 AND sillyness <= 10)
 );
+
+DROP TABLE IF EXISTS fun_characters;
+CREATE TABLE fun_characters (
+    name TEXT NOT NULL,
+    slogan TEXT NOT NULL
+);
