@@ -37,3 +37,9 @@ create table transactions
     account_nr text not null,
     time TIMESTAMP DEFAULT now()
 );
+
+CREATE TABLE fun_characters (
+    name TEXT NOT NULL,
+    slogan TEXT NOT NULL,
+    sillyness INTEGER CHECK (sillyness >= 0 AND sillyness <= 10)
+);
