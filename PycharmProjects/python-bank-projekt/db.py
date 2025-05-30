@@ -1,8 +1,10 @@
 import psycopg2
 
+
 # Singleton to reuse the same connection across instances
 class Db:
     _instance = None
+    conn: psycopg2.extensions.connection  # type: ignore
 
     def __new__(cls):
         if cls._instance is None:
