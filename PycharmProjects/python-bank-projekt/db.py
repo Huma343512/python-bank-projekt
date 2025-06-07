@@ -1,6 +1,4 @@
 import psycopg2
-
-
 # Singleton to reuse the same connection across instances
 class Db:
     _instance = None

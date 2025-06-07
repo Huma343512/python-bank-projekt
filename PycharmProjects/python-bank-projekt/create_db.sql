@@ -11,21 +11,10 @@ create table customers
 (
     id    serial
         primary key,
-    name  text not null,
-    ssn  text not null
-        unique,
-    approved boolean not null default false
-);
+name  text not null,
 
-create table accounts
-(
-    id    serial
-        primary key,
-    customer int not null,
-    bank int not null,
-    type text not null,
-    nr text not null
-        unique,
+nr varchar(255) not null
+    unique,
     credit int not null default 0
 );
 
@@ -34,7 +23,8 @@ create table transactions
     id    serial
         primary key,
     amount  int not null default 0,
-    account_nr text not null,
+    account_nr text not null
+        references accounts(nr),
     time TIMESTAMP DEFAULT now()
 );
 
